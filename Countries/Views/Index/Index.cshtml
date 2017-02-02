@@ -1,0 +1,25 @@
+﻿@model Countries.Models.CountriesAndCitiesModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm("Index", "Index"))
+{
+    @Html.DropDownListFor(myModel => myModel.SelectionId, new SelectList(Model.countries, "CountryID", "Name"), "Select Country", new { @onchange = "this.form.submit();" })
+}
+
+
+@using (Html.BeginForm("Index", "Index"))
+{
+    @Html.DropDownListFor(myModel => myModel.CitySelectionId, new SelectList(Model.cities, "CityID", "Name"), "Select City")
+}
+
+
+
+
+
+
